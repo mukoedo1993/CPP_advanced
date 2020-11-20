@@ -1,0 +1,2 @@
+invalid use of const_cast with type ‘std::string’ {aka ‘std::__cxx11::basic_string<char>’}, which is not a pointer, reference,
+nor a pointer-to-data-member type
