@@ -1,0 +1,3 @@
+Default arguments can only be declared once
+Once declared, a default argument can not be redeclared. That means for a function with a forward declaration and a function definition,
+the default argument can be declared in either the forward declaration or the function definition, but not both.
