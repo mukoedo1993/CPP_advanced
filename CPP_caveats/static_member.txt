@@ -1,0 +1,2 @@
+A static member, like other nonmember objects, CANNOT access nonstatic member directly without an object of, a reference of or a pointer
+to its own class.
