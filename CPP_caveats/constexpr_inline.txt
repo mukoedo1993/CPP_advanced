@@ -1,0 +1,2 @@
+s ([dcl.constexpr], §7.1.5/2 in the C++11 standard): 
+"constexpr functions and constexpr constructors are implicitly inline (7.1.2)."
