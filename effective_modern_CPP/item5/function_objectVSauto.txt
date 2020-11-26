@@ -1,0 +1,4 @@
+Why do we prefer auto then a function object? 
+It's important to recognize that even setting aside the syntatic verbosity and need to repeat the parameter types,
+using std::function is not the same as using auto. An auto-declared variable holding a closure has the same type as the 
+closure, and as such it uses only as much memory as the closure requires. 
