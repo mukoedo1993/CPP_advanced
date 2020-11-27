@@ -12,3 +12,6 @@ on both argument types) and try to call the constructor taking std::initializer_
 require coverting an int(10) and a double(5.0) to bools. Both conversions would be narrowing (bool can't exactly represent either value)
 ,and narrowing conversions are prohibited inside braced initializers, so the call is invalid, and the code is rejected.
 
+braced_initializer_case3.cc
+If the user_defined and built-in type conversion does not exist, the compiler will turn to other ordinary constructors.
+
