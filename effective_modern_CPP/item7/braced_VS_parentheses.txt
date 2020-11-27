@@ -1,0 +1,8 @@
+First, as a class author, you need to be aware that if your set of overloaded constructors includes one or more functions taking
+a std::initializer_list, client cod using braced initialization may see only the std::initializer_list overloads. As a result, it's best
+to design your constructors so that the overload called isn't affected by whether clients use parentheses or braces.
+std::vector<T>::vector
+
+Second, I admit that I want to follow the step of the majority. As a class client, I would prefer parentheses, and only concede is braces really
+matter. Like initializer_list constructor of vector.... 
+e.g. vector<int>v={0,1,2,-3,3,10,-8};
