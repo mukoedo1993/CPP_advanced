@@ -5,3 +5,7 @@ argument (notice the use of angle brackets, not parentheses), so the function th
 a std::size_t has to produce its result during compilation, ...that means it must be a constexpr function.
 
 std::underlying_type<T>::type: if T is an enum type, it will return us the underlying type for the enum type.
+
+For case 4:
+Scoped enums may always be forward-declared. Unscoped enums may be forward-declared only if their declaration
+specifies an underlying type.
