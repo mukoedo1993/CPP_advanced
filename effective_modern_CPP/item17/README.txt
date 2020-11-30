@@ -11,3 +11,6 @@ Declaring a move operation (construction or assignment) in a class causes compil
 isn't proper way to move an object, there's no reason to expect that memberwise copy is the proper way to copy it.
 
 neither user-defined copy operations, move operations nor destructors definitions allowed for the synthesized move operations.
+
+Widget.cpp : the relation between template assignment operator/constructors with big-fives.
+Base.cc: how importance the default and other keywords work. 
