@@ -1,0 +1,6 @@
+Usage scenarios for constexpr objects become more interesting when constexpr
+functions are involved. Such functions produce compile-time constants when they are called with compile-time
+constants. If they're called with values not known until runtime, they produce runtime values. This may sound as if don't know
+what they'll do, but that's the wrong way to think about it. The right way to view it is this:
+
+constexpr functions can be used in contexts...
