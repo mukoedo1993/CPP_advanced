@@ -10,3 +10,7 @@ contexts where C++ requires an integral constant expression. Such contexts inclu
 template arguments(inlcuding lengths of std::array objects), enumerator values, alignment sepcifiers, and more. If you want to use
 a variable for these kinds of things, you certainly want to declare it constexpr, because then compilers will ensure that it has 
 a compile-time value.
+
+
+4: constexpr objects and functions may be used in a wider range of contexts than non-constexpr objects and functions.
+5: constxper is part of an object's or function;s interface.
