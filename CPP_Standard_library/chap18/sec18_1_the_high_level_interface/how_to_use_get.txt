@@ -1,0 +1,5 @@
+How to use std::future<T>::get()?
+1: #include<future>
+2: Pass some functionality that could run on its own in parallel as a callable object to std::async()
+3: Assign the result to a future<ReturnType> object.
+4:Call get() for the future<> object when you need the result or want to ensure that the functionality that was started has finished
