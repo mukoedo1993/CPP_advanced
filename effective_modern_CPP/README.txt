@@ -7,3 +7,4 @@ and the boost typeindex library.
 2: The results of some tools may be neither helpful nor accurate, so an understanding
 of C++'s type deduction rules remains essential.
 
+item16 and item19 requires knowledge of concurrency...
