@@ -1,0 +1,2 @@
+See:
+https://www.geeksforgeeks.org/buffer-flush-means-c/
