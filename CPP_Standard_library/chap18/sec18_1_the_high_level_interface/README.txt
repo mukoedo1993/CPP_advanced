@@ -13,3 +13,7 @@ deferred means that the operation has not yet started and wait for a wait() or g
 timeout means that the operation was started asynchronously but hasn't finished yet
 ready means the operation has finished.
 
+
+............................................................................................................................................
+If you start to use async(), you should pass all objects necessary to process the passed functionality by value so that async() uses only local copies.
+If copying is too expensive, ensure that the objects are passed as constant reference and that mutable is not used. In any other case, understand the implications of your approach..
