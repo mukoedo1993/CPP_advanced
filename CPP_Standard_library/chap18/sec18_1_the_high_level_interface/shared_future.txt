@@ -1,0 +1,14 @@
+shared_future<int>f=async(queryNumber);
+
+Thus, a shared future can be initialized by an ordinary future, which moves the state from the future to the
+shared future. 
+
+Internally, all shared future objects share the shared state, which async() creates to store the outcome of the 
+passed functionality (and store the functionality itself if it is deferred). 
+
+The shared future is then passed to the other threads, starting doSomething() with the shared future as second argument:
+auto f1 = async(launch::async, doSomething, '.', f);
+auto f2 = async(launch::async, doSomething, '+', f);
+auto f3 = async(launch::async, doSomething, '*', f);
+
+
