@@ -1,0 +1,10 @@
+1: Class thread doesn't have a launch policy. The C++ standard library always tries to start the passed
+2: functionality in a new thread. If this isn't possible, it throws a std::system_error with the error code
+resource_unavailable_try_again. 
+3: You have no interface to process the result or outcome of the thread. The only thing yo ucan get is a unique thread ID.
+4: If an exception occurs that is not caught inside the thread, the program immediately aborts, calling std::terminate(). To pass
+exceptions to a context outside the thread exception_ptrs have to be used.
+5: You have to declare whether, as a caller, you want to wait for the end of the thread (calling join()) or to detach from the thread started to
+let it run in the background without any control (calling detach()). If you don't do this before the lifetime of the thread object ends or a move assignment
+to it happens, the prorgam aborts, calling std::terminate
+6:If you let the thread run in the background and main() ends, all threads are terminated abruptly.
