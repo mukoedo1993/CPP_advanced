@@ -1,0 +1,4 @@
+However, another general mechanism is provided to pass result values and exceptions as outcomes of a thread,
+class std::promise. A promise object is the counterpart of a future object. Both are able to temporaily hold a shared state,
+representing a (result) value or an exception. While the future object allows you to retrive the data( using get()), the promise object enables
+you to provide the data( by using one of its set...()functions).
