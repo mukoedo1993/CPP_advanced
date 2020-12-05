@@ -1,5 +1,5 @@
 effective modern CPP's notes.
-
+https://book.douban.com/subject/25923597/
 
 Things to remember:
 1: Deduced types can often be seen using IDE editors, compiler error messages,
