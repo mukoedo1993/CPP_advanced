@@ -1,0 +1,9 @@
+Internally, shared_from_this looks up the control block for the current object, and it creates a new std::shared_ptr that
+refers to that control block. The design relies on the current object having an associated control block. For that to be the
+case, there must be an existing std::shared_ptr (e.g., one outside the member function calling shared_from_this) that points to the current
+object. If no such std::shared_ptr exists, (i.e. if the current object has no associated control block), behavior is undefined, although shared_from
+_this typically throws an exception.
+
+
+unqiue_ptr -> shared_ptr easy
+~<-~   NOT easy
