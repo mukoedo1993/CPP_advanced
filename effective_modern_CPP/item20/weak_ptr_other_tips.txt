@@ -1,0 +1,30 @@
+1:Because the default constructor is constexpr, static weak_ptrs are initialized as part of static non-local initialization, 
+before any dynamic non-local initialization begins.
+This makes it safe to use a weak_ptr in a constructor of any static object.
+
+....Observer design pattern...
+2:A<->B B->C
+case 1: they are all raw pointers. If A is destroyed, but C continues to point to B, B will contain a pointer
+to A that will dangle. B won't be able to detect that, so B may inadvertently dereference the dangling pointer.
+That would yield undefined behavior.
+
+case 2: They are all shared_ptrs. In this design, A and B contain std::shared_ptrs to each other. The resulting std::shared_ptr cycle
+(A points to B and B points to A) will prevent both A and B from being destroyed. Even if A and B are unreachable from other program data structures
+(e.g. because C no longer points to B),each will have a reference count of one. If that happens, A and B will jave been leaked, for all practical purposes.
+It will be impossible for the program to access them, yet their resources will never be reclaimed.
+
+case 3: A std::weak_ptr. This avoids both problems above. If A is destroyed, B pointer back to it will dangle, but B will be able to detect that. Furthermore, 
+though A and B will point to one another, B's pointer won't affect A's reference count, hence can't keep A from being destroyed when std::shared_ptrs no longer
+point to it.
+
+
+..........But in tree structure...........
+In strictly hierarchal data structures such as trees, child nodes are typically owned only by their parents. When a parent node is destoryed, its child nodes
+should be destryoed too. Links from parents to childern are thus generally best represented by std::unique_ptrs. Back links from childeren to parents can be safely
+implemeneted as raw pointers, because a child node should never have a lifetime longer than its parent. There's thus no risk of a child node dereferencing a dangling
+parent pointer.
+
+
+------------------Conclusion----------------------------------
+1: Use std::weak_ptr for std::shared_ptr-like pointers that can dangle.
+2: Potential use cases for std::weak_ptr include caching, observer lists, and the prevention of std::shared_ptr cycles.
