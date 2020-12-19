@@ -17,3 +17,17 @@ processWidget(std::shared_ptr<Widget>(new Widget),
 ...............................................................
 Direct use of new, then requires one memory allocation for the WIdget and a second allocation for the control block. 
 But using make_ style function, both two will be allocated in a chunk.
+
+
+..............................................................................
+Page146.cpp discussed the situation between pass shared_ptr as rvalue and lvalue. 
+
+
+
+....................................................................................................
+Conclusions:
+1: Compared to direct use of new, make functions eliminate source code duplication, improve exception safety, and, for std::make_shared
+and std::allocate_shared, geenrate code that's smaller and faster.
+2: Situtations where use of make functions is inappropriate include the ened to specify custom deleters and a desire to pass braced initializers.
+3: For std::shared_ptrs, additional situations where make functions may be ill-advised include(1) classes with custom memory management and (2) system
+with memory concerns, very large objects, and std::weak_ptrs that outlive the corresponding std::shared_ptrs.
