@@ -1,0 +1,4 @@
+If you've ever had to combat excessive build times, you're familiar with the Pimpl ("Pointer to implementation") Idiom.
+That's the technique whereby you replace the data members of a class with a pointer to an implementation class or struct,
+put the data members that used to be in the primary class into the implementation class, and access those data memebrs indirectly 
+through the pointer. 
