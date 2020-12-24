@@ -8,3 +8,8 @@ and the boost typeindex library.
 of C++'s type deduction rules remains essential.
 
 item16 and item19 both require knowledge of concurrency... 
+
+//Update: Dec 23rd, 19:52, PST,2020
+//Author: mukoedo1993
+It's too difficult to read more...
+I stopped perusing this book.
