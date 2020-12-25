@@ -2,3 +2,5 @@ the relatie order of non-local static objects defined in different translation u
 
 A translation unit is the source code giving rise to a single object file. It's basically a single source file, plus all of its 
 #include files.
+
+See case2 to know how to solve this problem.
