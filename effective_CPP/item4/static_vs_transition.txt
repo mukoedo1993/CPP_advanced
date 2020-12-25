@@ -1,0 +1,11 @@
+A static object is one that exists from the time it's constructed until the end of the program. Stack and heap-based
+objects are thus excluded. Included are global objects, objects defined at namespace scope, objects declared static inside classes,
+objects declared static inside functions, and objects declared static at file scope. Static objects inside functions are known as local
+static objects (because they're local to a function), and the other kinds of static objects are known as local static objects. Static objects 
+are automatically destroyed when the program exits, their destructores are automatically called when main finishes executing.
+
+A translation unit is the source code giving rise to a single object file. It's basically a single source file, plus all of its #include
+files.
+
+The problem we're concerned with, then, involves at least two separately compiled source files, each of which contains at least one 
+non-local static object. (i.e. an object that's global, at namespace scope, or static in a class or at file scope).
